@@ -1,15 +1,14 @@
 $(function () {
     // 1.获取基本信息
     getUserInfo()
-    // 退出
     var layer = layui.layer
-    $("#btnLogout").on("click",function(){
-        layer.confirm("是否确认退出？",{icon:3,title:'提示'},function (index) {
-            // 1.清空本地token
-            localStorage.removeItem("tken")
-            // 
+    $("#btnLogout").on('click', function () {
+        layer.confirm("是否确认退出？", {
+            icon: 3,
+            title: "提示"
+        }, function (index) {
+            localStorage.removeItem("token")
             location.href = "/login.html"
-            // 
             layer.close(index)
         })
     })
@@ -32,7 +31,7 @@ function getUserInfo() {
         }
     })
 }
-
+// 头像和用户名渲染封装
 function renderAvatar(user) {
     var name = user.nickname || user.username
     $("#welcome").html("欢迎&nbsp;&nbsp;" + name)
