@@ -1,6 +1,17 @@
 $(function () {
     // 1.获取基本信息
     getUserInfo()
+    var layer = layui.layer
+    $("#btnLogout").on('click', function () {
+        layer.confirm("是否确认退出？", {
+            icon: 3,
+            title: "提示"
+        }, function (index) {
+            localStorage.removeItem("token")
+            location.href = "/login.html"
+            layer.close(index)
+        })
+    })
 })
 // 后面其他的页面还要调用
 function getUserInfo() {
