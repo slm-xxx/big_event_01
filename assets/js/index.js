@@ -20,7 +20,7 @@ function getUserInfo() {
         }
     })
 }
-
+// 头像和用户名渲染封装
 function renderAvatar(user) {
     var name = user.nickname || user.username
     $("#welcome").html("欢迎&nbsp;&nbsp;" + name)
