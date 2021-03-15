@@ -36,7 +36,7 @@ function renderAvatar(user) {
     var name = user.nickname || user.username
     $("#welcome").html("欢迎&nbsp;&nbsp;" + name)
     if (user.user_pic !== null) {
-        $(".layui-nav-img").show().attr("src", use.user_pic).show()
+        $(".layui-nav-img").show().attr("src", user.user_pic).show()
         $(".tetx-avatar").hide()
     } else {
         $(".layui-nav-img").hide()
